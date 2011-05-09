@@ -1,0 +1,65 @@
+{% load i18n %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>{% block title %}{% endblock %}GLX Assets</title>
+	<meta name="description" content="Green Line Extension Asset Mapping">
+	<meta name="keywords" content="Boston, Metro, Planning, Participation, Green Line, Transportation, Public, Meeting">
+	<meta name="author" content="MAPC">
+        
+    <!-- geotags -->
+	<meta name="DC.title" content="GLX Assets"> 
+	<meta name="geo.placename" content="Boston">
+	<meta name="geo.position" content="42.34;-71.08">
+	<meta name="geo.region" content="US-MA">
+	<meta name="ICBM" content="42.34;-71.08">
+	
+	<link rel="stylesheet" href="{{ STATIC_URL }}css/blueprint-css/blueprint/screen.css" type="text/css" media="screen, projection">
+	<link rel="stylesheet" href="{{ STATIC_URL }}css/blueprint-css/blueprint/print.css" type="text/css" media="print">
+	<!--[if lt IE 8]>
+	<link rel="stylesheet" href="{{ STATIC_URL }}css/blueprint-css/blueprint/ie.css" type="text/css" media="screen, projection">
+	<![endif]-->
+	
+	<style type="text/css">
+	
+	#header{
+		text-align: center;
+	}
+	
+	#footer {
+		text-align: center;
+	}
+	
+	{% block style %}{% endblock %}
+	</style>
+	
+	{% block javascript %}{% endblock %}
+	
+</head>
+<body>
+	
+	<div id="wrap">
+		<div class="container">
+		
+		<div id="header" class="prepend-2 span-20 append-2 append-bottom prepend-top last">
+			<a href="/" title="Mystic Valley Parkway Community Visioning Process"><img src="{{ STATIC_URL }}img/glx-logo.png" alt="Mystic Valley Parkway Community Visioning Process" /></a>
+			<h1>Asset Mapping</h1>
+		</div>
+		
+		{% block body %}{% endblock %}
+		
+		<div id="footer" class="prepend-2 span-20 append-2 append-bottom prepend-top small">
+			<p>
+				{% blocktrans %}
+				Questions? Please contact{% endblocktrans %} <a href="mailto:glx@mapc.org?subject=Greenline Asset Mapping question">glx@mapc.org</a><br>
+				&copy; <a href="http://www.mapc.org" title="Metropolitan Area Planning Council">MAPC</a> 2011
+			</p>	
+		</div>
+		
+		</div>
+	</div>
+	
+</body>
+</html>

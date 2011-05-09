@@ -15,7 +15,7 @@ ASSET_CATEGORIES = (
 
 class Asset(models.Model):
     title = models.CharField('Asset Title', max_length=100,)
-    category = models.CharField('Asset Category', max_length=1, choices=ASSET_CATEGORIES)
+    category = models.CharField('Asset Category', max_length=1, default='p', choices=ASSET_CATEGORIES)
     ip = models.IPAddressField('IP Address', blank=True, null=True)
     # GeoDjango
     location = models.PointField(geography=True, blank=True, null=True, default='POINT(0 0)') # default SRS 4326
@@ -30,7 +30,7 @@ class AssetForm(ModelForm):
         model = Asset
         exclude = ('ip',)
         widgets = {
-            'title': TextInput(attrs={'size': '100'}),
+            'title': TextInput(attrs={'size': '100',}),
             'category': RadioSelect(),
             'location': HiddenInput(),         
         }

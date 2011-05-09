@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block style %}
+
+h2 {
+	text-align: center;
+}
+
+{% endblock %}
+
+{% block body %}
+
+<div class="prepend-2 span-20 append-2 last">
+
+<h2>Thank you!</h2>
+
+<p><a href="/asset/{{ asset.id }}" title="{{ asset.title }}">Your Asset</a> has been added to the map.</p>
+
+<p>Be the first one to <a href="/asset/{{ asset.id }}" title="{{ asset.title }}"><strong>add a comment</strong></a> to it!</p>
+
+</div>
+
+{% endblock %}

@@ -23,6 +23,9 @@ class Asset(models.Model):
     
     def __unicode__(self):
         return u'%s' % (self.id)
+    
+    def get_absolute_url(self):
+        return "/asset/%i/" % self.id
 
 class AssetForm(ModelForm):
     

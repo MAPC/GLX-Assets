@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	
+	<name>Green Line Extension Mystic Parkway Assets</name>
+	<open>1</open>
+	
+	<Style id="marker_c">
+		<IconStyle>
+			<Icon>
+				<href>{{ STATIC_URL }}img/marker_c.png</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	
+	<Style id="marker_p">
+		<IconStyle>
+			<Icon>
+				<href>{{ STATIC_URL }}img/marker_p.png</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	
+{% for asset in assets %}
+	<Placemark>
+		<name>{{ asset.title }}</name>
+		<description><![CDATA[<a href="{{ asset.get_absolute_url }}">Click and join the discussion!</a>]]></description>
+		<styleUrl>#marker_{{ asset.category }}</styleUrl>
+    	{{ asset.kml|safe }}
+	</Placemark>
+{% endfor %}
+</Document>
+</kml>

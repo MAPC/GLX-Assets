@@ -17,7 +17,13 @@ urlpatterns = patterns('',
     
     (r'^$', 'asset.views.index'),
     
+    # asset detail page with comment stream
+    (r'^asset/(?P<asset_id>\d+)/$', 'asset.views.detail'),
+    
     # add new asset
     (r'^asset/new/', 'asset.views.new'),
+    
+    # get all assets as kml
+    (r'^asset/kml/', 'asset.views.kml'),
     
 )

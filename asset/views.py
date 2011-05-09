@@ -1,13 +1,16 @@
 from django.template import RequestContext
 from django.shortcuts import render_to_response
+from django.contrib.gis.shortcuts import render_to_kml
 
 from asset.models import Asset, AssetForm
 
 # Create your views here.
 def index(request):
     
-    return render_to_response('asset/index.html', {
-            },
+    assets  = Asset.objects.all()
+    
+    return render_to_response('asset/index.html', 
+            {'assets' : assets},
             context_instance=RequestContext(request)
         )
     
@@ -28,4 +31,17 @@ def new(request):
     return render_to_response('asset/new.html', 
                               {'form': form, 
                                }, 
-                               context_instance=RequestContext(request))    
+                               context_instance=RequestContext(request))   
+    
+def detail(request, asset_id):
+    asset = Asset.objects.get(pk=asset_id)
+    return render_to_response('asset/detail.html',
+                            {'asset': asset,
+                             },
+                            context_instance=RequestContext(request)) 
+    
+def kml(request):
+     assets  = Asset.objects.kml()
+     return render_to_kml('asset/assets.kml', 
+                            {'assets' : assets},
+                            context_instance=RequestContext(request)) 

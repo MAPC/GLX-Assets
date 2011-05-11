@@ -43,7 +43,7 @@ $(document).ready(function() {
     {% for asset in assets %}
     	var latlng_{{ asset.id }} = new google.maps.LatLng({{ asset.location.y }}, {{ asset.location.x }});
     	var info_{{ asset.id }} = new google.maps.InfoWindow({
-			content: "<strong>{{ asset.title }}</strong> - <a href='{{ asset.get_absolute_url }}'>Join the discussion!</a>"
+			content: "<strong>{{ asset.title }}</strong> ({{ asset.get_category_display }}) <br><a href='{{ asset.get_absolute_url }}'>Join the discussion!</a>"
 		});
 		var marker_{{ asset.id }} = new google.maps.Marker({
 			position: latlng_{{ asset.id }},

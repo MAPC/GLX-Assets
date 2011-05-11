@@ -8,7 +8,7 @@
 	<Style id="marker_c">
 		<IconStyle>
 			<Icon>
-				<href>{{ STATIC_URL }}img/marker_c.png</href>
+				<href>{{ MEDIA_URL }}img/marker_c.png</href>
 			</Icon>
 		</IconStyle>
 	</Style>
@@ -16,7 +16,7 @@
 	<Style id="marker_p">
 		<IconStyle>
 			<Icon>
-				<href>{{ STATIC_URL }}img/marker_p.png</href>
+				<href>{{ MEDIA_URL }}img/marker_p.png</href>
 			</Icon>
 		</IconStyle>
 	</Style>

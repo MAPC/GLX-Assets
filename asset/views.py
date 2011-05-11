@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.template import RequestContext
 from django.shortcuts import render_to_response
 from django.contrib.gis.shortcuts import render_to_kml
@@ -10,7 +11,8 @@ def index(request):
     assets  = Asset.objects.all()
     
     return render_to_response('asset/index.html', 
-            {'assets' : assets},
+            {'assets' : assets,
+             'MEDIA_URL': settings.MEDIA_URL,},
             context_instance=RequestContext(request)
         )
     
@@ -23,25 +25,27 @@ def new(request):
             entry.ip = request.META['REMOTE_ADDR']
             entry.save()
             return render_to_response('asset/thanks.html',
-                                      {'asset': entry},
+                                      {'asset': entry,
+                                       'MEDIA_URL': settings.MEDIA_URL,},
                                       context_instance=RequestContext(request))            
     else:
         form = AssetForm()
         
     return render_to_response('asset/new.html', 
                               {'form': form, 
-                               }, 
+                               'MEDIA_URL': settings.MEDIA_URL,}, 
                                context_instance=RequestContext(request))   
     
 def detail(request, asset_id):
     asset = Asset.objects.get(pk=asset_id)
     return render_to_response('asset/detail.html',
                             {'asset': asset,
-                             },
+                             'MEDIA_URL': settings.MEDIA_URL,},
                             context_instance=RequestContext(request)) 
     
 def kml(request):
      assets  = Asset.objects.kml()
      return render_to_kml('asset/assets.kml', 
-                            {'assets' : assets},
+                            {'assets' : assets,
+                             'MEDIA_URL': settings.MEDIA_URL,},
                             context_instance=RequestContext(request)) 

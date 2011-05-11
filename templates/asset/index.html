@@ -34,7 +34,7 @@ $(document).ready(function() {
 	var map = new google.maps.Map(document.getElementById("map_canvas"),
 		mapOptions);
     
-	var shadow = new google.maps.MarkerImage("{{ STATIC_URL }}img/shadow.png",
+	var shadow = new google.maps.MarkerImage("{{ MEDIA_URL }}img/shadow.png",
 		new google.maps.Size(38.0, 34.0),
 		new google.maps.Point(0, 0),
 		new google.maps.Point(10, 34)
@@ -49,7 +49,7 @@ $(document).ready(function() {
 			position: latlng_{{ asset.id }},
     		map: map,
     		title:"{{ asset.title }}",
-    		icon: "{{ STATIC_URL }}img/marker_{{ asset.category }}.png",
+    		icon: "{{ MEDIA_URL }}img/marker_{{ asset.category }}.png",
     		shadow: shadow
 		});
     	google.maps.event.addListener(marker_{{ asset.id }}, 'click', function() {

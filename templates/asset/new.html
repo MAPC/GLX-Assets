@@ -32,16 +32,25 @@ h3 {
 
 $(document).ready(function() {
 
-	var asset = new google.maps.LatLng(42.41796, -71.126057);
+	var station = new google.maps.LatLng(42.4166293422, -71.1281383942);
 	
 	var mapOptions = {
 		zoom: 14,
 		mapTypeId: google.maps.MapTypeId.ROADMAP,
-		center: asset
+		center: station
 	};
  
 	var map = new google.maps.Map(document.getElementById("map_canvas"),
 		mapOptions);
+		
+	var marker_station = new google.maps.Marker({
+		map: map,
+		title: "Proposed Green Line Station",
+		position: station,
+		icon: "{{ MEDIA_URL }}img/train.png"
+	});
+	
+	var asset = new google.maps.LatLng(42.4166293422, -71.1281383942);
 	
 	var markerAsset = new google.maps.Marker({
 		position: asset,

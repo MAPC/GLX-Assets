@@ -2,14 +2,10 @@
 
 {% block style %}
 
-h2 {
-	text-align: center;
-}
-
 #map_canvas {
 	width: 100%; 
 	height: 400px;
-	margin-bottom: 18px;
+	margin-bottom: 9px;
 }
 
 {% endblock %}
@@ -77,6 +73,8 @@ $(document).ready(function() {
 {% block body %}
 
 <div class="prepend-2 span-20 append-2 last">
+	
+<h2>What is an "asset"?</h2>
 
 <p>As the Metropolitan Area Planning Council (MAPC) moves forward in developing a vision for the area surrounding the potential 
 	Mystic Valley Parkway Green Line station, it is important that residents of surrounding communities are involved in identifying 
@@ -86,19 +84,47 @@ $(document).ready(function() {
 	and "Change" <img src="{{ MEDIA_URL }}img/marker_c.png" height="18" alt="Change">. Preservation refers to assets 
 	which are of value to residents and should be preserved if the Green Line comes to Mystic Valley Parkway. Change refers to assets 
 	which offer opportunities for change and can have a positive impact for residents if the Green Line is extended.</p>
+	
+<p>MAPC is looking for specific examples of assets. These could include:
+	<ul>
+		<li>Buildings (i.e. U-Haul, 200 Boston Avenue, Whole Foods)</li>
+		<li>Parks or open space (i.e. Mystic River, Dilboy Field)</li>
+		<li>Transportation facilities (i.e. sidewalks, roadways, intersections)</li>
+	</ul>	
+</p>
 
-<p>The following online mapping exercise asks residents to identify key community assets that should be preserved or those that can be 
-	used to support positive change. After identifying an asset, please use the comment feature to tell us why you think this is an asset.
-	<span class="loud"><strong>If someone has already identified the asset on the map, you can still share comments by clicking on the asset 
-		marker on the map.</strong></span></p>
+<p>We are not looking for general categories of assets such as housing or transportation. If you would like to see more housing or 
+	more commercial development or better sidewalks, please choose specific locations. All general comments can be submitted to 
+	MAPC at <a href="mailto:glx@mapc.org?subject=General comment">glx@mapc.org</a>.</p>
+
+<h2>Why are we mapping assets?</h2>
+
+<p>The input provided through this website and at the public meeting on <a href="http://www.mapc.org/smart-growth/green-line-extension" title="Green Line Extension">May 17th</a> will be used by MAPC to develop different 
+	land use and development scenarios for the future around the potential Green Line station. By working with the public to 
+	map assets, MAPC will have a better understanding of what the public would like to see preserved in the area and what could 
+	be changed. This input will feed directly into the scenario modeling exercises that are planned for the upcoming fourth 
+	meeting for this project.</p>
 
 <div id="map_canvas"></div>
 
-<h2><a href="/asset/new" title="Add new asset">Add new asset</a></h2>
+<p class="large loud" style="text-align:center"><a href="/asset/new" title="Add new asset"><strong>Add new asset</strong></a></p>
 
-<p>MAPC will use the mapping information to help build a vision for the station area that incorporates these key assets. Please join us at 
-	the upcoming <a href="http://www.mapc.org/smart-growth/green-line-extension" title="Green Line Extension">public meeting</a> on May 17th from 6:30-9:00PM to learn more about the visioning process and to provide input on your 
-	preferences for the future of the station area. Thank you for participating.</p>
+<h3>Instructions for mapping assets</h3>
+
+<ol>
+<li>Click on <a href="/asset/new" title="Add new asset">Add New Asset</a> under the map.</li>
+<li>Drag the red asset marker to the location of the asset you wish to map.</li>
+<li>You can zoom in or out or pan using your mouse or the controls on the left side of the map.  You can also toggle between the road map and a satellite image.</li>
+<li>After you have placed your asset marker, please provide a title for the asset in the title box.</li>
+<li>Select whether the asset should be a preservation or change marker.</li>
+<li>Click the "Add!" button.</li>
+<li>If you wish to add a new comment to your asset, click the “add a new comment” link.</li>
+<li>If you wish to another asset, click on the "add another asset” link.</li>
+</ol>
+
+<p class="loud"><strong>If the asset you want to map already exists, you can simply post a new comment and join the discussion by clicking on the marker instead of 
+	re-mapping the asset.</strong></p>
+
 
 </div>
 

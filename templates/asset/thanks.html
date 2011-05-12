@@ -2,7 +2,7 @@
 
 {% block style %}
 
-h2 {
+h2, p {
 	text-align: center;
 }
 
@@ -14,9 +14,10 @@ h2 {
 
 <h2>Thank you!</h2>
 
-<p><a href="/asset/{{ asset.id }}" title="{{ asset.title }}">Your Asset</a> has been added to the map.</p>
-
-<p>Be the first one to <a href="/asset/{{ asset.id }}" title="{{ asset.title }}"><strong>add a comment</strong></a> to it!</p>
+<p>Your asset "<strong>{{ asset.title }}</strong>" has been added to the map.</p>
+	
+<p><a href="/asset/{{ asset.id }}" title="{{ asset.title }}">Add a new comment</a> to it or 
+	<a href="/asset/new/" title="Add new asset">add another asset</a> to the map</p>
 
 </div>
 
